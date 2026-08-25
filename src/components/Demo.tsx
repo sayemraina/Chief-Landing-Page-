@@ -13,22 +13,23 @@ const CAPTIONS = [
   {
     label: "01",
     title: "Capture",
-    text: "The GP walks the property. Takes photos the way they already do. Nothing changes about their behavior.",
+    text: "The GP walks the property. Takes photos and videos the way they already do. Nothing changes about their work.",
   },
   {
     label: "02",
     title: "Processing",
-    text: "Chief writes the notes from visual evidence, in real time. The observations a CRE professional would write.",
+    text: "Chief drafts the notes straight from the photos and videos - no narration needed. The observations a CRE professional would write, in real-time.",
   },
   {
     label: "03",
     title: "Review",
-    text: "Visit ends. Notes are already done. The GP reviews and adds the judgment only they can supply.",
+    text: "Visit ends. The draft is already done. The GP adds their insights that can only come from years of experience.",
   },
   {
     label: "04",
     title: "Distribution",
-    text: "One tap. The analyst gets what feeds the model. The VP gets the full picture. The GP's post-visit work goes to zero.",
+    text: "One tap. The analyst gets what feeds the model. The VP gets the full picture. ",
+    highlight: "The GP's post-visit work goes to zero.",
   },
 ];
 
@@ -93,7 +94,7 @@ export function Demo() {
 
           <div className="absolute bottom-10 left-0 right-0 px-6">
             <div className="max-w-2xl mx-auto text-center">
-              <CaptionSwitcher activeBeat={activeBeat} captions={CAPTIONS} />
+              <CaptionSwitcher activeBeat={activeBeat} fade={contentFadeOut} captions={CAPTIONS} />
             </div>
           </div>
         </motion.div>
@@ -145,15 +146,17 @@ function ScreenLayer({
 
 function CaptionSwitcher({
   activeBeat,
+  fade,
   captions,
 }: {
   activeBeat: MotionValue<number>;
+  fade: MotionValue<number>;
   captions: typeof CAPTIONS;
 }) {
   return (
     <div className="relative h-24">
       {captions.map((caption, i) => (
-        <CaptionItem key={i} activeBeat={activeBeat} index={i} caption={caption} />
+        <CaptionItem key={i} activeBeat={activeBeat} fade={fade} index={i} caption={caption} />
       ))}
     </div>
   );
@@ -161,15 +164,23 @@ function CaptionSwitcher({
 
 function CaptionItem({
   activeBeat,
+  fade,
   index,
   caption,
 }: {
   activeBeat: MotionValue<number>;
+  fade: MotionValue<number>;
   index: number;
   caption: (typeof CAPTIONS)[number];
 }) {
-  const opacity = useTransform(activeBeat, (v: number) =>
-    Math.round(v) === index ? 1 : 0
+  // Multiplying by `fade` here is a deliberate safety net: activeBeat's
+  // discrete Math.round match can be left on a stale frame after a fast/instant
+  // scroll (scrollbar drag, Page Down), desyncing from the native-CSS sticky
+  // release. `fade` is a simple linear scroll-range map, far less prone to that,
+  // so it forces the caption invisible once the section has actually faded out
+  // even if activeBeat's index match is stale.
+  const opacity = useTransform([activeBeat, fade], ([beat, f]: number[]) =>
+    (Math.round(beat) === index ? 1 : 0) * f
   );
 
   return (
@@ -179,6 +190,9 @@ function CaptionItem({
       </p>
       <p className="text-text-secondary text-sm sm:text-base leading-relaxed max-w-lg mx-auto">
         {caption.text}
+        {"highlight" in caption && caption.highlight && (
+          <span className="text-text-primary">{caption.highlight}</span>
+        )}
       </p>
     </motion.div>
   );
