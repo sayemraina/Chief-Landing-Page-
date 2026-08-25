@@ -62,10 +62,22 @@ export function ScrollRevealSection({
     end: i * (sliceWidth + GAP) + sliceWidth,
   }));
 
-  // Build word list per paragraph
+  // Build word list per paragraph. A literal "\n" in the text forces a line
+  // break within the paragraph (still one reveal block, not a separate
+  // paragraph with its own spacing/timing).
   const paraWords: string[][] = paragraphs.map((p) =>
-    p.text.split(/\s+/)
+    p.text.split("\n").flatMap((line) => line.trim().split(/\s+/))
   );
+  const paraBreakBefore: boolean[][] = paragraphs.map((p) => {
+    const lines = p.text.split("\n");
+    const breaks: boolean[] = [];
+    lines.forEach((line, li) => {
+      line.trim().split(/\s+/).forEach((_, wi) => {
+        breaks.push(li > 0 && wi === 0);
+      });
+    });
+    return breaks;
+  });
 
   return (
     <section
@@ -90,6 +102,7 @@ export function ScrollRevealSection({
         >
           {paragraphs.map((para, pi) => {
             const words = paraWords[pi];
+            const breakBefore = paraBreakBefore[pi];
             const range = paraRanges[pi];
             const wordCount = words.length;
             return (
@@ -109,15 +122,17 @@ export function ScrollRevealSection({
                   );
                   const opacity = t;
                   return (
-                    <span
-                      key={wi}
-                      style={{
-                        opacity,
-                        transition: "opacity 0.05s ease-out",
-                      }}
-                    >
-                      {word}
-                      {wi < wordCount - 1 ? " " : ""}
+                    <span key={wi}>
+                      {breakBefore[wi] && <br />}
+                      <span
+                        style={{
+                          opacity,
+                          transition: "opacity 0.05s ease-out",
+                        }}
+                      >
+                        {word}
+                        {wi < wordCount - 1 ? " " : ""}
+                      </span>
                     </span>
                   );
                 })}

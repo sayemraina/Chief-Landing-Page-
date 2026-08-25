@@ -6,12 +6,14 @@ import { Traceability } from "@/components/Traceability";
 import { Anchor } from "@/components/Anchor";
 import { FooterCTA } from "@/components/FooterCTA";
 import { BreathingGrid } from "@/components/BreathingGrid";
+import { ScrollCue } from "@/components/ScrollCue";
 
 export default function Home() {
   return (
     <>
       <Header />
       <BreathingGrid />
+      <ScrollCue />
       <main>
         <section className="relative min-h-screen overflow-hidden">
           <Hero />

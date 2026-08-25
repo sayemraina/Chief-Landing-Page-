@@ -27,3 +27,8 @@ body {
   background: var(--color-gold);
   color: var(--color-navy);
 }
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0px); opacity: 0.45; }
+  50% { transform: translateY(8px); opacity: 1; }
+}

@@ -38,7 +38,7 @@ export function Hero() {
         </h1>
 
         <p className="mx-auto mt-5 max-w-xs sm:max-w-none whitespace-normal sm:whitespace-nowrap text-base sm:text-lg text-text-secondary leading-relaxed">
-          The cross-functional brain for Mid-Market Commercial Real Estate.
+          The Cross-Functional Brain for Mid-Market Commercial Real Estate.
         </p>
 
         <a
