@@ -66,7 +66,7 @@ export function Demo() {
           </h2>
         </div>
         <motion.div
-          className="w-full h-full flex items-center justify-center pt-16 pb-36"
+          className="w-full h-full flex items-center justify-center pt-16 pb-28 sm:pb-36"
           style={{ opacity: contentFadeOut }}
         >
           <div className="relative w-full max-w-7xl mx-auto px-6 flex items-center justify-center">

@@ -20,6 +20,7 @@ html {
 body {
   background: var(--color-navy);
   color: var(--color-text-primary);
+  overflow-x: hidden;
 }
 
 ::selection {

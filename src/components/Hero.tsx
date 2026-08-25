@@ -37,14 +37,13 @@ export function Hero() {
           Everything your firm knows, now comes to you.
         </h1>
 
-        <p className="mx-auto mt-5 max-w-none whitespace-nowrap text-base sm:text-lg text-text-secondary leading-relaxed">
+        <p className="mx-auto mt-5 max-w-xs sm:max-w-none whitespace-normal sm:whitespace-nowrap text-base sm:text-lg text-text-secondary leading-relaxed">
           The cross-functional brain for Mid-Market Commercial Real Estate.
         </p>
 
         <a
           href="#book-call"
-          className="mt-10 px-8 py-3.5 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors"
-          style={{ marginLeft: '-24px' }}
+          className="mt-10 px-8 py-3.5 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors sm:-ml-6"
         >
           Book a call
         </a>

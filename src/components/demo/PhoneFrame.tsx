@@ -1,6 +1,6 @@
 export function PhoneFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative w-[260px] h-[520px] sm:w-[280px] sm:h-[560px]">
+    <div className="relative w-[220px] h-[460px] sm:w-[280px] sm:h-[560px]">
       {/* Phone bezel */}
       <div className="absolute inset-0 rounded-[3rem] bg-[#1a1a1a] shadow-2xl shadow-black/50 border border-white/10">
         {/* Notch */}
