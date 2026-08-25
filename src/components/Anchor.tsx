@@ -14,7 +14,7 @@ export function Anchor() {
         },
         {
           text: "It's built to grow into everything downstream a site visit touches - the underwriting model, the IC memo, the data room, the lender package, the handoff to the Asset Manager and so on.",
-          className: "text-lg sm:text-xl text-text-primary leading-relaxed",
+          className: "text-lg sm:text-xl text-text-primary leading-relaxed font-medium",
         },
       ]}
       runwayVh={170}

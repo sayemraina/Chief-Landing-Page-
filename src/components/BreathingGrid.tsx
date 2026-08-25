@@ -521,35 +521,6 @@ export function BreathingGrid() {
       ctx.shadowBlur = 0;
     }
 
-    // --- Form label ---
-    const showLabel = morphActive && activeForm && formLayout && (morph.phase === "hold" || morph.phase === "assemble" || morph.phase === "dissolve");
-    if (showLabel && activeForm && formLayout) {
-      let labelAlpha = 0.20;
-      if (morph.phase === "assemble") {
-        const labelStart = FORM_ASSEMBLE_MS * 0.7;
-        if (currentMorphElapsed < labelStart) {
-          labelAlpha = 0;
-        } else {
-          labelAlpha = Math.min(0.20, ((currentMorphElapsed - labelStart) / (FORM_ASSEMBLE_MS * 0.3)) * 0.20);
-        }
-      } else if (morph.phase === "dissolve") {
-        labelAlpha = 0.20 * Math.max(0, 1 - currentMorphElapsed / FORM_DISSOLVE_MS);
-      }
-
-      // Place label centered under the form's bottom edge
-      const labelX = formLayout.originX + activeForm.frame.xMid * formLayout.cell;
-      const labelY = formLayout.originY + (activeForm.frame.yMid + activeForm.frame.ySpan / 2) * formLayout.cell + 20;
-      const fade = fadeMask(labelX, labelY, cx, cy, diagonal);
-      labelAlpha *= fade;
-
-      if (labelAlpha > 0.01) {
-        ctx.font = "12px Inter, system-ui, sans-serif";
-        ctx.fillStyle = `rgba(${lineColor},${labelAlpha})`;
-        ctx.textAlign = "center";
-        ctx.fillText(activeForm.name, labelX, labelY + 15);
-      }
-    }
-
     // --- Schedule next frame ---
     animRef.current = requestAnimationFrame(draw);
   // eslint-disable-next-line react-hooks/exhaustive-deps

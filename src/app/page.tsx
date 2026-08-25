@@ -7,6 +7,7 @@ import { Anchor } from "@/components/Anchor";
 import { FooterCTA } from "@/components/FooterCTA";
 import { BreathingGrid } from "@/components/BreathingGrid";
 import { ScrollCue } from "@/components/ScrollCue";
+import { TeamViewsMobile } from "@/components/TeamViewsMobile";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <div id="demo-boundary">
           <Demo />
         </div>
+        <TeamViewsMobile />
         <Anchor />
         <Traceability />
         <FooterCTA />
