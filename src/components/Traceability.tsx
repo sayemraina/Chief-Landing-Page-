@@ -13,7 +13,7 @@ export function Traceability() {
           className: "text-base sm:text-xl text-text-primary font-medium leading-relaxed text-center",
         },
         {
-          text: "Because it already came to you.",
+          text: "Chief already brought it to you.",
           className: "text-base sm:text-xl text-text-primary font-medium leading-relaxed text-center -translate-x-3",
         },
       ]}
