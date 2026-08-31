@@ -10,7 +10,7 @@ export function Traceability() {
         },
         {
           text: "Chief already brought it to you.",
-          className: "text-base sm:text-xl text-text-primary font-medium leading-relaxed text-center -translate-x-3",
+          className: "text-base sm:text-xl text-text-primary font-medium leading-relaxed text-center",
         },
       ]}
       innerClassName="max-w-2xl mx-auto"
