@@ -33,19 +33,19 @@ export function Hero() {
             "radial-gradient(ellipse 130% 100% at center, rgba(10,15,28,0.55) 0%, rgba(10,15,28,0.2) 60%, transparent 85%)",
         }}
       >
-        <h1 className="mx-auto max-w-2xl text-balance text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.2] tracking-tight">
-          Everything your firm knows, now comes to you.
+        <h1 className="text-[34px] sm:text-[42px] font-semibold leading-snug tracking-tight text-center">
+          Walk the site. By the time<br />you leave, your team is already up to speed.
         </h1>
 
-        <p className="mx-auto mt-5 max-w-xs sm:max-w-none whitespace-normal sm:whitespace-nowrap text-base sm:text-lg text-text-secondary leading-relaxed">
-          The Cross-Functional Brain for Mid-Market Commercial Real Estate.
+        <p className="mt-6 text-[15px] sm:text-[18px] text-text-secondary">
+          Purpose-Built for Mid-Market Commercial Real Estate Teams.
         </p>
 
         <a
-          href="#book-call"
-          className="mt-10 px-8 py-3.5 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors sm:-ml-6"
+          href="#demo"
+          className="mt-8 px-10 py-3.5 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors block w-fit -ml-6"
         >
-          Book a call
+          See how it works
         </a>
       </div>
     </section>

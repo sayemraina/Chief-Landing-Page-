@@ -40,10 +40,11 @@ export function Demo() {
     offset: ["start start", "end end"],
   });
 
-  const [isMd, setIsMd] = useState(false);
+  const [isMd, setIsMd] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches
+  );
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
-    setIsMd(mq.matches);
     const handler = (e: MediaQueryListEvent) => setIsMd(e.matches);
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
@@ -60,7 +61,7 @@ export function Demo() {
 
   return (
     <section ref={containerRef} className="relative h-[500vh]">
-      <div className="sticky top-0 h-screen overflow-hidden z-10">
+      <div className="sticky top-0 h-screen overflow-hidden z-10 bg-[#0A0F1C]">
         <div className="absolute top-20 left-6 sm:left-12 z-20">
           <h2 className="text-xl sm:text-2xl font-semibold text-text-primary">
             How to get started with Chief
