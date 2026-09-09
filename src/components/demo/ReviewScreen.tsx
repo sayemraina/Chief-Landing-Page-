@@ -20,7 +20,7 @@ export function ReviewScreen() {
       {/* Add judgment input */}
       <div className="mx-4 mt-3 bg-gold/5 border border-gold/20 rounded-xl p-3">
         <p className="text-[10px] text-gold uppercase tracking-wider font-medium mb-2">
-          Your judgment
+          Your observations
         </p>
         <p className="text-xs text-text-primary leading-relaxed">
           The staining near the dock door looks like it could be an active leak.
