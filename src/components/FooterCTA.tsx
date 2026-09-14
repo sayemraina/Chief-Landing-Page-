@@ -19,7 +19,7 @@ export function FooterCTA() {
         </p>
         <a
           href="#book-call"
-          className="inline-block mt-8 px-10 py-4 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors"
+          className="inline-block mt-8 px-6 py-3 sm:px-10 sm:py-4 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors"
         >
           Book a call
         </a>

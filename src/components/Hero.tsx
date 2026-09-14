@@ -37,13 +37,13 @@ export function Hero() {
           Walk the site. By the time<br />you leave, your team is already up to speed.
         </h1>
 
-        <p className="mt-6 text-[15px] sm:text-[18px] text-text-secondary">
+        <p className="mt-6 max-w-xs sm:max-w-none text-[15px] sm:text-[18px] text-text-secondary">
           Purpose-Built for Mid-Market Commercial Real Estate Teams.
         </p>
 
         <a
           href="#demo"
-          className="mt-8 px-10 py-3.5 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors block w-fit -ml-6"
+          className="mt-8 px-10 py-3.5 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors block w-fit sm:-ml-6"
         >
           See how it works
         </a>

@@ -14,7 +14,7 @@ export function PostDemoCTA() {
       >
         <a
           href="#book-call"
-          className="inline-block px-10 py-4 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors"
+          className="inline-block px-6 py-3 sm:px-10 sm:py-4 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors"
         >
           Get early access
         </a>
