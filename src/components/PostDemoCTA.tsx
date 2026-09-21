@@ -90,16 +90,21 @@ export function PostDemoCTA() {
             transition={{ duration: 0.2 }}
           >
             <div
-              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+              className="absolute inset-0 bg-navy/40 backdrop-blur-md"
               onClick={handleClose}
             />
             <motion.div
-              className="relative w-full max-w-md bg-[#111827] border border-[#1F2937] rounded-2xl p-8"
+              className="relative w-full max-w-md rounded-2xl p-8 overflow-hidden"
+              style={{
+                background: "linear-gradient(145deg, rgba(17,24,39,0.95) 0%, rgba(10,15,28,0.98) 100%)",
+                boxShadow: "0 0 0 1px rgba(196,166,109,0.15), 0 24px 80px -12px rgba(0,0,0,0.6), 0 0 40px -8px rgba(196,166,109,0.08)",
+              }}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
             >
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
               <button
                 onClick={handleClose}
                 className="absolute top-4 right-4 text-[#6B7280] hover:text-text-primary transition-colors text-xl leading-none"
