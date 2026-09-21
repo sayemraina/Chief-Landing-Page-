@@ -114,7 +114,7 @@ export function PostDemoCTA() {
                     You&apos;re on the list.
                   </p>
                   <p className="text-text-secondary text-sm">
-                    I&apos;ll personally reach out within 48 hours.
+                    We&apos;ll reach out within 2-3 days.
                   </p>
                 </div>
               ) : state === "duplicate" ? (
