@@ -33,8 +33,10 @@ export function Hero() {
             "radial-gradient(ellipse 130% 100% at center, rgba(10,15,28,0.55) 0%, rgba(10,15,28,0.2) 60%, transparent 85%)",
         }}
       >
-        <h1 className="text-[34px] sm:text-[42px] font-semibold leading-snug tracking-tight text-center">
-          Walk the site. By the time<br />you leave, your team is already up to speed.
+        <h1 className="text-[28px] sm:text-[42px] font-semibold leading-snug tracking-tight text-center max-w-[340px] sm:max-w-none">
+          Walk the site. By the time{" "}
+          <br className="hidden sm:inline" />
+          you leave, your team is already up to speed.
         </h1>
 
         <p className="mt-6 max-w-xs sm:max-w-none text-[15px] sm:text-[18px] text-text-secondary">

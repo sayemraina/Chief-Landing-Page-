@@ -33,7 +33,7 @@ export function TeamViews() {
             </div>
             <span className="text-[10px] font-mono text-text-secondary">Cosmetic reserve</span>
           </div>
-          <div className="flex items-center justify-between py-2">
+          <div className="flex flex-wrap items-center justify-between gap-y-1 py-2">
             <div className="flex items-center gap-2">
               <span className="text-[10px] font-mono text-gold">Site Improvements</span>
               <span className="text-[10px] text-text-muted">Fair</span>

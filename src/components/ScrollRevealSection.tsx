@@ -85,7 +85,7 @@ export function ScrollRevealSection({
       className="relative z-10"
       style={{ height: `${runwayVh}vh`, ...(opaqueBg ? { backgroundColor: '#0A0F1C' } : {}) }}
     >
-      <div className={`sticky top-0 flex items-center justify-center min-h-screen px-6 pb-24 ${title ? "pt-32" : "pt-20"} sm:pt-0`}>
+      <div className={`sticky top-0 flex items-center justify-center min-h-screen px-5 sm:px-6 pb-16 sm:pb-24 ${title ? "pt-24 sm:pt-32" : "pt-16 sm:pt-20"} sm:pt-0`}>
         {title && (
           <div className="absolute top-20 left-6 sm:left-12 z-20">
             <h2 className="text-xl sm:text-2xl font-semibold text-text-primary">

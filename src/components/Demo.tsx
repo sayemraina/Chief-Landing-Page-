@@ -93,7 +93,7 @@ export function Demo() {
             </motion.div>
           </div>
 
-          <div className="absolute bottom-10 left-0 right-0 px-6">
+          <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-6">
             <div className="max-w-2xl mx-auto text-center">
               <CaptionSwitcher activeBeat={activeBeat} fade={contentFadeOut} captions={CAPTIONS} />
             </div>
@@ -155,7 +155,7 @@ function CaptionSwitcher({
   captions: typeof CAPTIONS;
 }) {
   return (
-    <div className="relative h-24">
+    <div className="relative h-32 sm:h-24">
       {captions.map((caption, i) => (
         <CaptionItem key={i} activeBeat={activeBeat} fade={fade} index={i} caption={caption} />
       ))}

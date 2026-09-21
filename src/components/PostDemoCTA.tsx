@@ -94,7 +94,7 @@ export function PostDemoCTA() {
               onClick={handleClose}
             />
             <motion.div
-              className="relative w-full max-w-md rounded-2xl p-8 overflow-hidden"
+              className="relative w-full max-w-md rounded-2xl p-6 sm:p-8 overflow-hidden"
               style={{
                 background: "linear-gradient(145deg, rgba(17,24,39,0.95) 0%, rgba(10,15,28,0.98) 100%)",
                 boxShadow: "0 0 0 1px rgba(196,166,109,0.15), 0 24px 80px -12px rgba(0,0,0,0.6), 0 0 40px -8px rgba(196,166,109,0.08)",
