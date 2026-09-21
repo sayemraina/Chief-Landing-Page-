@@ -1,4 +1,23 @@
+"use client";
+
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (opts: { url: string }) => void;
+    };
+  }
+}
+
 export function FooterCTA() {
+  function openCalendly(e: React.MouseEvent) {
+    e.preventDefault();
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/sayam07raina/chief-15-min-intro",
+      });
+    }
+  }
+
   return (
     <section
       id="book-call"
@@ -17,14 +36,13 @@ export function FooterCTA() {
         <p className="mt-4 text-text-secondary text-lg">
           15 minutes. We&apos;ll show you how Chief handles a real site visit.
         </p>
-        <a
-          href="#book-call"
+        <button
+          onClick={openCalendly}
           className="inline-block mt-8 px-6 py-3 sm:px-10 sm:py-4 bg-gold text-navy font-semibold text-base rounded-lg hover:bg-gold-dim transition-colors"
         >
           Book a call
-        </a>
+        </button>
       </div>
-
     </section>
   );
 }

@@ -30,6 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
+      <head>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <script src="https://assets.calendly.com/assets/external/widget.js" async />
+      </head>
       <body className="min-h-full flex flex-col bg-navy text-text-primary font-[family-name:var(--font-inter)]">
         {children}
       </body>
