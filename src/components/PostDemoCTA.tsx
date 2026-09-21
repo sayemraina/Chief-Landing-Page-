@@ -109,23 +109,76 @@ export function PostDemoCTA() {
               </button>
 
               {state === "success" ? (
-                <div className="text-center space-y-3 py-4">
-                  <p className="text-gold text-lg font-semibold">
+                <motion.div
+                  className="text-center py-8 px-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <motion.div
+                    className="mx-auto mb-6 w-14 h-14 rounded-full border-2 border-gold flex items-center justify-center"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.1 }}
+                  >
+                    <motion.svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-gold"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 0.4, delay: 0.3 }}
+                    >
+                      <motion.path
+                        d="M5 13l4 4L19 7"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 0.4, delay: 0.3 }}
+                      />
+                    </motion.svg>
+                  </motion.div>
+                  <p className="text-xl font-semibold tracking-tight mb-2">
                     You&apos;re on the list.
                   </p>
-                  <p className="text-text-secondary text-sm">
+                  <p className="text-text-secondary text-sm leading-relaxed">
                     We&apos;ll reach out within 2-3 days.
                   </p>
-                </div>
+                  <button
+                    onClick={handleClose}
+                    className="mt-8 px-8 py-2.5 text-sm text-text-secondary border border-[#1F2937] rounded-lg hover:border-[#374151] hover:text-text-primary transition-colors"
+                  >
+                    Done
+                  </button>
+                </motion.div>
               ) : state === "duplicate" ? (
-                <div className="text-center space-y-3 py-4">
-                  <p className="text-gold text-lg font-semibold">
+                <motion.div
+                  className="text-center py-8 px-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <div className="mx-auto mb-6 w-14 h-14 rounded-full border-2 border-[#374151] flex items-center justify-center">
+                    <span className="text-text-secondary text-lg">&#10003;</span>
+                  </div>
+                  <p className="text-xl font-semibold tracking-tight mb-2">
                     You&apos;re already signed up.
                   </p>
-                  <p className="text-text-secondary text-sm">
+                  <p className="text-text-secondary text-sm leading-relaxed">
                     We&apos;ll be in touch soon.
                   </p>
-                </div>
+                  <button
+                    onClick={handleClose}
+                    className="mt-8 px-8 py-2.5 text-sm text-text-secondary border border-[#1F2937] rounded-lg hover:border-[#374151] hover:text-text-primary transition-colors"
+                  >
+                    Done
+                  </button>
+                </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <h3 className="text-xl font-semibold tracking-tight text-center mb-6">
