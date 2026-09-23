@@ -12,6 +12,7 @@ export function Header() {
   function openCalendly(e: React.MouseEvent) {
     e.preventDefault();
     if (window.Calendly) {
+      window.dispatchEvent(new CustomEvent("calendly:opening"));
       window.Calendly.initPopupWidget({
         url: "https://calendly.com/sayam07raina/chief-15-min-intro",
       });

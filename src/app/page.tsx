@@ -9,6 +9,7 @@ import { ScrollCue } from "@/components/ScrollCue";
 import { TeamViewsMobile } from "@/components/TeamViewsMobile";
 import { PostDemoCTA } from "@/components/PostDemoCTA";
 import { SectionNav } from "@/components/SectionNav";
+import { CalendlyOverlay } from "@/components/CalendlyOverlay";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <SectionNav />
       <BreathingGrid />
       <ScrollCue />
+      <CalendlyOverlay />
       <main>
         <section className="relative min-h-screen overflow-hidden">
           <Hero />
